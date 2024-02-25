@@ -34,7 +34,7 @@ const achievements = [
 function AchievementSection() {
   return (
     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="border-[#33353F] border rounded-md py-8 px-16 flex flex-row items-center justify-between  ">
+      <div className="grid items-center space-y-5  sm:space-y-0 border-[#33353F] border rounded-md py-8 px-16 sm:flex sm:flex-row sm:justify-between  ">
         {achievements.map((achievement, index) => (
           <div
             key={index}
