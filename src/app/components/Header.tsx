@@ -1,14 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
-import NavLink from "./NavLink";
+import { nanoid } from "nanoid";
 import MobileMenuOverlay from "./MobileMenuOverlay";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 
 export const navlinks = [
-  { title: "About", path: "#about" },
-  { title: "Projects", path: "#projects" },
-  { title: "Contact", path: "#contact" },
+  { title: "About", path: "#about", id: nanoid() },
+  { title: "Projects", path: "#projects", id: nanoid() },
+  { title: "Contact", path: "#contact", id: nanoid() },
 ];
 function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -45,8 +46,15 @@ function Header() {
           <nav className="">
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8">
               {navlinks.map((navlink, index) => (
-                <li key={index}>
-                  <NavLink href={navlink.path} title={navlink.title} />
+                <li key={navlink.id}>
+                  <ScrollLink
+                    className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 cursor-pointer hover:text-white"
+                    to={navlink.title}
+                    smooth={true}
+                    offset={-85}
+                  >
+                    {navlink.title}
+                  </ScrollLink>
                 </li>
               ))}
             </ul>

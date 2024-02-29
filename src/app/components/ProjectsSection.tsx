@@ -80,7 +80,7 @@ function ProjectsSection() {
     animate: { y: 0, opacity: 1 },
   };
   return (
-    <section>
+    <section id="Projects">
       <h2 className="text-white text-4xl font-bold text-center  my-8">
         My Projects
       </h2>
